@@ -1,6 +1,6 @@
 ### How to run app?
 
-* Create a virtual environment.
+* Create a virtual environment (python 3)
 * `pip install -r requirements.txt`
 * `python models.py`
 * `python populate_db.py`

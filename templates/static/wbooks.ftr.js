@@ -9,7 +9,8 @@
               searchMatch = new RegExp(search, 'i');
           if (items && items.length > 0) {
             for (var i = 0; i < items.length; i++) {
-              if (searchMatch.test(items[i].title)) {
+              debugger;
+              if (searchMatch.test(items[i].title) || searchMatch.test(items[i].title.replace(/[aeiou]/ig,''))) {
                 filtered.push(items[i]);
               }
             }
