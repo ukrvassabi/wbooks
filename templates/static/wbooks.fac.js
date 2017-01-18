@@ -16,12 +16,14 @@
             if (data && data.limit) {
               return $q.all([
                   $http.get("/api/v1/book?limit=" + data.limit),
-                  $http.get("/api/v1/bookwbook")
+                  $http.get("/api/v1/bookwbook"),
+                  $http.get("/api/v1/wunderlist/book")
               ]);
             }
             return $q.all([
                 $http.get("/api/v1/book"),
-                $http.get("/api/v1/bookwbook")
+                $http.get("/api/v1/bookwbook"),
+                $http.get("/api/v1/wunderlist/book")
             ]);
           },
           addToWunderlist: function(book) {

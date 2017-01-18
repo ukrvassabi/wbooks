@@ -10,10 +10,16 @@
 
         BooksService.getList().then(function(responses) {
           vm.booksList = [];
-          var books = responses[0].data, wbooks = responses[1].data;
+          var books = responses[0].data, bookswbooks = responses[1].data, wbooks = responses[2].data;
           angular.forEach(books, function(book) {
-            angular.forEach(wbooks, function(wbook) {
+            angular.forEach(bookswbooks, function(wbook) {
               if (book.id === wbook.book_id) {
+                book.wbook = true;
+                book.highlight = "success";
+              }
+            });
+            angular.forEach(wbooks, function (wbook) {
+              if (book.title == wbook.title) {
                 book.wbook = true;
                 book.highlight = "success";
               }
