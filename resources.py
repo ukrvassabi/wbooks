@@ -125,6 +125,7 @@ class WbookResource(Resource):
                         session.add(db_wbook)
                         session.commit()
                     except SQLAlchemyError:
+                        session.rollback()
                         return abort(403, description="record was added previously")
                 return r.json()
         return []
