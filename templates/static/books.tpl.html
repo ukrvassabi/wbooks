@@ -1,0 +1,26 @@
+<wbooks-navigation ng-model="books.search"></wbooks-navigation>
+<div class="table-responsive">
+  <table class='table table-condensed table-striped'>
+    <thead>
+      <tr>
+        <th class="col-sm-1">ID</th>
+        <th class="col-sm-3">Title</th>
+        <th class="col-sm-4">Link</th>
+        <th class="col-sm-2">Category</th>
+        <th class="col-sm-2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="book in books.booksList | searchTitle:books.search" ng-class="book.highlight">
+        <td class="col-sm-1">{{ book.id }}</td>
+        <td class="col-sm-3">{{ book.title }}</td>
+        <td class="col-sm-4"><a ng-href="{{ book.link }}" target="_blank">{{ book.link }}</a></td>
+        <td class="col-sm-2">{{ book.category.name }}</td>
+        <td class="col-sm-2 td-middle">
+          <button ng-click="books.addToWunderlist(book)" class="btn btn-primary"
+                  ng-disabled="book.wbook">Add to Wunderlist</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
