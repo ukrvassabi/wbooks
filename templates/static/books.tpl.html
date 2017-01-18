@@ -16,7 +16,7 @@
         <td class="col-sm-3">{{ book.title }}</td>
         <td class="col-sm-4"><a ng-href="{{ book.link }}" target="_blank">{{ book.link }}</a></td>
         <td class="col-sm-2">{{ book.category.name }}</td>
-        <td class="col-sm-2 td-middle">
+        <td class="col-sm-2 td-middle text-center">
           <button ng-click="books.addToWunderlist(book)" class="btn btn-primary"
                   ng-disabled="book.wbook">Add to Wunderlist</button>
         </td>
