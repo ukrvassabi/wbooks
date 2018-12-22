@@ -3,4 +3,4 @@ Flask-RESTful==0.3.5
 Flask-SQLAlchemy==2.1
 Markdown==2.6.7
 bs4==0.0.1
-requests==2.12.4
+requests==2.21.0
